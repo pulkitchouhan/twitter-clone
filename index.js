@@ -18,6 +18,10 @@ app.use(cors());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/tweets", tweetRoutes);
+
+app.get("/", (req, res) => {
+  res.json({ message: "Server is running and responding with JSON!" });
+});
 const PORT = 5000;
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
